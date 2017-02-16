@@ -1,0 +1,52 @@
+<!Doctype html>
+<head>
+    <title>paralax</title>
+    <meta charset="utf-8">
+    <style>
+        body,html{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #a87465;
+        }
+        .wrap{
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+    <div id="scene">
+        <div class="layer bg1" data-depth="0.10"><img src="img/bg1.png"></div>
+        <div class="layer bg2" data-depth="0.30"><img src="img/bg2.png"></div>
+        <div class="layer bg3" data-depth="0.50"><img src="img/bg3.png"></div>
+        <div class="layer bg4" data-depth="0.70"><img src="img/bg4.png"></div>
+    </div>
+        </div>
+    <script src="js/parallax.js"></script>
+    <script>
+        var scene = document.getElementById('scene');
+        var parallax = new Parallax(scene, {
+          scalarX: 4,
+          scalarY: 7,
+          frictionX: 0.5,
+          frictionY: 0.5,
+          originX: 0.0,
+          originY: 0.0
+        });
+        
+        var btnV = document.getElementById('btn-v');
+        btnV.addEventListener('click', function(){
+            document.getElementById('overlay1').style.left = 0;
+        });
+        
+        var btnN = document.getElementById('btn-n');
+        btnN.addEventListener('click', function(){
+            document.getElementById('overlay2').style.left = 0;
+        });
+    </script>
+</body>
