@@ -1,1 +1,1 @@
-parallax
+Zhenka on canary islands parallax effect.
